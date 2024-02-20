@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!--Required meta tags-->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css">
+    <title>Login System in Node.js Express</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="mt-5 mb-5 text-center text-primary">
+        <b>LOGIN PAGE</b>
+      </h1>
+    <div class="row mt-5">
+      <div class="col-md-3">&nbsp;</div>
+      <div class="col-md-6">
+          <% if(session.user_id) { %>
+             <h1>Hi User, Welcome</h1>
+             <a href="/logout" class="btn btn-primary">Logout</a>
+             <% } else { %>
+
+                     <div class="card">
+                      <div class="card-header">Login</div>
+                      <div class="card-body">
+                        <form action="/login" method="post">
+                          <div class="mb-3">
+                            <label class="ogh">Email:  </label>
+                            <input type="email" name="user_email_address" class="form-control">
+                            </div>
+                            <div class="mb-3">
+                              <label class="ogh">Password:</label>
+                              <input type="password" name="user_password" class="form-control">
+                              </div>
+                             <!-- <input type="submit" class="btn btn-primary" value="Login" /> -->
+                             <button type="submit" value="login" name="">Login</button>
+                          </div>
+                        </form>
+                      </div>
+                     </div>
+
+            <% } %>
+       </div>
+     </div>
+   </div>
+   <style>
+    body{
+      background-color: aqua;
+      text-align: center;
+      border: 1px solid black;
+      border-radius: 20px;
+      padding: 0;
+      margin: 0;
+      align-items: center;
+      display: flex;
+      justify-content: center;
+    }
+    b{
+      color: blueviolet;
+    }
+    .ogh{
+      color: yellow;
+    }
+    button{
+  width: 80%;
+  padding: 10px;
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-family: "lemon", serif;
+  transition: transform 0.3s ease;
+}
+ button:hover{
+  background-color: chartreuse;
+ }
+ input{
+  width: 100%;
+  padding: 9px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  box-sizing: 30px;
+  transition: transform 0.3s ease;
+  border-radius: 20px;
+ }
+   </style>
+ </body>
+</html>
